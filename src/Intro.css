@@ -1,20 +1,23 @@
 .intro-screen {
   position: relative;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* ✅ Solid black background */
+  z-index: 9999; /* Keep intro above all other content */
 }
 
 .intro-video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-height: 90vh;
+  object-fit: contain; /* Ensures full content is visible */
   z-index: 0;
   filter: brightness(0.85);
+  background-color: #000; /* Extra safety: prevent transparency */
 }
 
 .overlay {
@@ -23,69 +26,32 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+  background: rgba(0, 0, 0, 0.4); /* Lighter overlay for readability */
   z-index: 1;
 }
 
 .intro-content {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  color: white;
   text-align: center;
   padding: 20px;
-  animation: fadeInContent 1s ease-in-out;
 }
 
-@keyframes fadeInContent {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* ✅ Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .intro-video {
+    max-height: 50vh;
+    object-fit: contain;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.connect-btn {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #000;
-  padding: 14px 32px;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect only for larger screens */
-@media (hover: hover) {
-  .connect-btn:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05);
-  }
-}
-
-/* MOBILE STYLES */
-@media (max-width: 600px) {
-  .connect-btn {
-    font-size: 1rem;
-    padding: 12px 24px;
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
   }
 
   .intro-content {
     padding: 16px;
-  }
-
-  .intro-video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+    font-size: 14px;
   }
 }
+
