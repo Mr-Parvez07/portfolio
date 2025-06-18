@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import 'animate.css';
 
 import Intro from './Intro';
 import Header from './Header';
@@ -14,13 +13,10 @@ import Courses from './Courses';
 import Projects from './Projects';
 import Hobbies from './Hobbies';
 import Contact from './Contact';
-import Footer from './Footer'; 
+import Footer from './Footer';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(() => {
-    // Show intro only if not seen in this session
-    return sessionStorage.getItem('hasSeenIntro') !== 'true';
-  });
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -53,3 +49,4 @@ function App() {
 }
 
 export default App;
+
