@@ -4,7 +4,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'animate.css';
 
-
 import Intro from './Intro';
 import Header from './Header';
 import Home from './Home';
@@ -18,7 +17,10 @@ import Contact from './Contact';
 import Footer from './Footer'; 
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(() => {
+    // Show intro only if not seen in this session
+    return sessionStorage.getItem('hasSeenIntro') !== 'true';
+  });
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -39,7 +41,7 @@ function App() {
           <About />
           <Skills />
           <Education />
-           <Courses />
+          <Courses />
           <Projects />
           <Hobbies />
           <Contact />
