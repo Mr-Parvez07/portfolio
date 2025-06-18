@@ -6,8 +6,8 @@ function Intro({ onFinish }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    // Skip intro if already shown before
-    const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+    // Skip intro if already shown in this session
+    const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
     if (hasSeenIntro === 'true') {
       if (typeof onFinish === 'function') {
         onFinish();
@@ -16,8 +16,8 @@ function Intro({ onFinish }) {
   }, [onFinish]);
 
   const handleVideoEnd = () => {
-    // Mark intro as seen
-    localStorage.setItem('hasSeenIntro', 'true');
+    // Mark as seen for this session
+    sessionStorage.setItem('hasSeenIntro', 'true');
 
     // Navigate to home
     if (typeof onFinish === 'function') {
@@ -42,3 +42,4 @@ function Intro({ onFinish }) {
 }
 
 export default Intro;
+
