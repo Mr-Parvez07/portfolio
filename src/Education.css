@@ -1,0 +1,25 @@
+#education {
+  scroll-margin-top: 70px;
+}
+
+.main-education-card {
+  background: #f9fafa;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.edu-box {
+  max-width: 700px;
+  border-left: 5px solid #282c2f;
+  transition: transform 0.2s ease;
+}
+
+.edu-box:hover {
+  transform: translateY(-2px);
+  background-color: #f1f9ff;
+}

@@ -1,0 +1,43 @@
+#projects {
+  scroll-margin-top: 70px;
+}
+
+.project-container {
+  border-radius: 1rem;
+  background: #fdfdfd;
+}
+
+.project-card-inner {
+  border: 1px solid #e3e3e3;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.project-card-inner:hover {
+  background-color: #f9f9f9;
+}
+
+.project-img {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.project-details h4 {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.btn-primary {
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056d2;
+  color: #fff;
+}

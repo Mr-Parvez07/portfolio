@@ -1,0 +1,44 @@
+.navbar-brand {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-hover {
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0%;
+  background-color: #b8e5ee;
+  transition: width 0.3s ease;
+}
+
+.nav-hover:hover::after {
+  width: 100%;
+}
+
+/* Mobile Enhancements */
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .navbar-collapse {
+    background-color: #1f1f1f;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+}
