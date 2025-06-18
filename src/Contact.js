@@ -49,45 +49,52 @@ function Contact() {
           </h2>
 
           <p className="text-center text-muted lead mb-4">
-            I'm always open to discussing new opportunities and interesting projects. <br />
-            <strong>Let’s Connect!</strong> Whether you have a project in mind, want to collaborate, or just say hello — I’d love to hear from you!
+            I'm always open to discussing new opportunities and interesting projects.
           </p>
 
           <div className="row">
             {/* Contact Info */}
             <div className="col-md-6">
               <ul className="list-group list-group-flush contact-list">
-                <li className="list-group-item d-flex align-items-center">
-                  <BsEnvelopeAtFill className="icon text-danger fs-4 me-3" style={{ minWidth: '1.5rem' }} />
-                  <span>mohammedparvez7457@gmail.com</span>
+                <li className="list-group-item">
+                  <a
+                    href="mailto:mohammedparvez7457@gmail.com"
+                    className="contact-link d-flex align-items-center"
+                  >
+                    <BsEnvelopeAtFill className="icon text-danger fs-4 me-3" />
+                    mohammedparvez7457@gmail.com
+                  </a>
                 </li>
 
-                <li className="list-group-item d-flex align-items-center">
-                  <BsLinkedin className="icon text-primary fs-4 me-3" />
+                <li className="list-group-item">
                   <a
                     href="https://linkedin.com/in/mohammed-parvez-785bb0284"
                     target="_blank"
                     rel="noreferrer"
-                    className="contact-link"
+                    className="contact-link d-flex align-items-center"
                   >
+                    <BsLinkedin className="icon text-primary fs-4 me-3" />
                     linkedin.com/in/mohammed-parvez-785bb0284
                   </a>
                 </li>
-                <li className="list-group-item d-flex align-items-center">
-                  <BsGithub className="icon fs-4 me-3" />
+
+                <li className="list-group-item">
                   <a
                     href="https://github.com/Mr-Parvez07"
                     target="_blank"
                     rel="noreferrer"
-                    className="contact-link"
+                    className="contact-link d-flex align-items-center"
                   >
+                    <BsGithub className="icon fs-4 me-3" />
                     github.com/Mr-Parvez07
                   </a>
                 </li>
+
                 <li className="list-group-item d-flex align-items-center">
                   <BsTelephoneFill className="icon text-success fs-4 me-3" />
                   <span>+91 7899455308</span>
                 </li>
+
                 <li className="list-group-item d-flex align-items-center">
                   <BsGeoAltFill className="icon text-warning fs-4 me-3" />
                   <span>Bangalore, India</span>
@@ -97,6 +104,11 @@ function Contact() {
 
             {/* Contact Form */}
             <div className="col-md-6 mt-4 mt-md-0">
+              <strong>Let’s Connect!</strong>
+              <p>
+                Whether you have a project in mind, want to collaborate, or just say hello — I’d love to hear from you!
+              </p>
+
               <form onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
                   <input
@@ -111,6 +123,7 @@ function Contact() {
                   />
                   <label htmlFor="name">Your Name</label>
                 </div>
+
                 <div className="form-floating mb-3">
                   <input
                     type="email"
@@ -124,6 +137,7 @@ function Contact() {
                   />
                   <label htmlFor="email">Your Email</label>
                 </div>
+
                 <div className="form-floating mb-3">
                   <textarea
                     className="form-control"
@@ -137,6 +151,7 @@ function Contact() {
                   ></textarea>
                   <label htmlFor="message">Your Message</label>
                 </div>
+
                 <button type="submit" className="btn btn-primary w-100">
                   Send Message
                 </button>
