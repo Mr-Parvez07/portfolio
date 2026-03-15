@@ -40,7 +40,7 @@ function Home() {
           <p className="lead rotating-title">{titles[titleIndex]}</p>
           <div className="d-flex justify-content-center justify-content-md-start flex-wrap gap-3">
             <a
-              href="/parvez.pdf"
+              href="/MOHAMMED PARVEZ_Resume (1).pdf"
               className="btn btn-outline-info btn-lg rounded-pill shadow-sm"
               download
             >
